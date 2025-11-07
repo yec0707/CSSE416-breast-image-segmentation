@@ -149,3 +149,6 @@ if uploaded_file:
         col3.image(pred_img, caption="Predicted Mask", use_container_width=True)
 else:
     st.info("👆 Upload an image file to begin.")
+
+
+# test set path on laptop: C:\Users\Owner\OneDrive - Rose-Hulman Institute of Technology\Rose-Hulman\course\CSSE\CSSE416\project\CSSE416-breast-image-segmentation\Web_stuff\testSet
