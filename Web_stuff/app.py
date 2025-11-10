@@ -22,6 +22,7 @@ st.markdown(
 MODEL_DIR = os.path.join(os.path.dirname(__file__), "models")
 
 MODEL_OPTIONS = {
+    "ResNet50 DeepLabV3+ — after aug (decoder only)": "res50_deepLab_aa_de.pth",
     "ResNet50 UNet — after aug (decoder only)": "res50_unet_aa_de.pth",
     "ResNet50 UNet — before aug (include encoder)": "res50_unet_ba_en.pth",
     "ResNet50 UNet++ — after aug (include encoder)": "res50_unet++_aa_en.pth",
@@ -38,7 +39,11 @@ def load_model(model_key):
     filename = MODEL_OPTIONS[model_key]
     weights_path = os.path.join(MODEL_DIR, filename)
 
-    if "res50_unet++" in filename:
+    # add DeepLabV3+ logic
+    if "deepLab" in filename or "deeplab" in filename:
+        model_class = smp.DeepLabV3Plus
+        encoder = "resnet50"
+    elif "res50_unet++" in filename:
         model_class = smp.UnetPlusPlus
         encoder = "resnet50"
     elif "res50_unet" in filename:
