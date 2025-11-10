@@ -2,7 +2,10 @@
 
 ## Web_stuff folder  
 This folder contains the web python programme. This code originally comes from Lifei Liu, and was optimized by Chengyang Ye. When using the web app, upload files from the subfolder testSet so the labels can be uploaded automatically. To make this happen, the path to test folder has to be entered in the dataset folder on the left.  
-  
+
+## YOLO
+This folder contains the training results and scripts for **breast mass detection and classification** using Yolo, reference link : https://github.com/monajemi-arman/breast_cancer_detection?utm_source=chatgpt.com
+
 ## V-Unet  
 This is the main folder where training on image segmentation happens. This code mainly uses package segmentation_models.pytorch, link as follows:   
 https://github.com/qubvel-org/segmentation_models.pytorch.git   
@@ -18,3 +21,11 @@ divide into aa and ba, and under them divide into de and en. Every Jupyter conta
   
 #### Visualization  
 A code runs for visualizing all the models instead of going to every single juypter notebook to see the reults.  
+
+## inbreast_extract_and_preprocess
+This file preprocessed the dataset, turn labels into mask format, augmentated both images and masks, and split train/val/test into ratio 8/1/1
+
+## pectoral muscles labeling reference link
+https://github.com/Parvaneh-Aliniya/pectoral_muscle_groundtruth_segmentation
+
+
