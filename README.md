@@ -4,10 +4,10 @@
 see details in requirements.txt  
   
 ## Web_stuff folder  
-This folder contains the web python programme running on local host. This code originally comes from Lifei Liu, and was optimized by Chengyang Ye. When using the web app, upload files from the subfolder testSet so the labels can be uploaded automatically. To make this happen, the path to test folder has to be entered in the dataset folder on the left.  
+This folder contains the web python programme running on local host. This code originally comes from Lifei Liu, and was optimized by Chengyang Ye and Qi Xu. When using the web app, upload files from the subfolder testSet so the labels can be uploaded automatically.  
   
-There is a hugging face version: https://huggingface.co/spaces/OgakuRina/CSSE416-Breast-image-Segmentation  
-But this hugging face host still requires to download testset in this repo and upload from local  
+There is a hugging face version: https://huggingface.co/spaces/xuq2/test_breast  
+But this hugging face host still requires to download testset in this repo and upload from local. It also has a little bug if this website runs on a small screen, the 3 images could overlap, but on a standard screen it could perform normally.  
 
 ## YOLO
 This folder contains the training results and scripts for **breast mass detection and classification** using Yolo, reference link : https://github.com/monajemi-arman/breast_cancer_detection
@@ -16,10 +16,11 @@ This folder contains the training results and scripts for **breast mass detectio
 This is the main folder where training on image segmentation happens. This code mainly uses package segmentation_models.pytorch, link as follows:   
 https://github.com/qubvel-org/segmentation_models.pytorch.git   
 This contains the following structure: Unet, Unet++ and DeepLabV3+  
-and the following pretained network: VGG16, ResNet50 and Xception
+and the following pretained network: VGG16, ResNet50 and Xception  
+All the code is using same epochs, learning rate and batch sizes 
   
 #### models  
-this folder contains all the models trained in this project. For how files are named, the format is 'pretrainedNets_structrue_aa/ba_de/en'. 'aa' stands for after augmentation, 'ba' stands for before augmentation, 'de' stands for only unfreezing decoder and 'en' stands for unfreezing part of the encoder.  
+this folder contains all the models trained in this project. For how files are named, the format is 'pretrainedNets_structrue_aa/ba_de/en'. 'aa' stands for after augmentation, 'ba' stands for before augmentation, 'de' stands for only unfreezing decoder and 'en' stands for unfreezing part of the encoder. All the models are store in the LFS object format in git    
   
 #### tensorflow  
 This folder is just some failure trials on using tensorflow package. Does not work due to environment setup.  
